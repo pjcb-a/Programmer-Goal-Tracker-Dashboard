@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="application.controllers.LoadingController" styleClass="loading-container" alignment="CENTER" spacing="25"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50"/>
+    </padding>
+
+<!--    Special fxml for added effects simulation-->
+    <Label text="Welcome, Admin!" styleClass="modal-title"/>
+    <Label text="Loading Dashboard..." styleClass="modal-subtitle"/>
+
+    <!-- Loading Spinner -->
+    <ProgressIndicator styleClass="loading-spinner"/>
+
+</VBox>

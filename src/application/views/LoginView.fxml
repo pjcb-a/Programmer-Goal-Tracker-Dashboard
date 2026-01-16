@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Uses StackPane as the root for easy centering and to match application modal structure -->
+<StackPane fx:controller="application.controllers.LoginController"
+           xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- The VBox contains the actual form structure and layout properties -->
+    <VBox styleClass="login-container" alignment="CENTER" spacing="20">
+
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+
+        <Label text="Goal Tracker Login" styleClass="card-title"/>
+        <Separator/>
+
+        <VBox spacing="10" prefWidth="300">
+            <!-- Username Field -->
+            <Label text="Username (Admin)" styleClass="input-label"/>
+            <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
+
+            <!-- Password Field -->
+            <Label text="Password" styleClass="input-label"/>
+            <PasswordField fx:id="passwordField" promptText="password" styleClass="input-field"/>
+
+            <!-- Error Message -->
+            <Label fx:id="errorLabel" styleClass="error-message"/>
+        </VBox>
+
+        <!-- Login Button -->
+        <Button text="Login" onAction="#handleLogin" styleClass="modal-add-button" prefWidth="300"/>
+    </VBox>
+</StackPane>

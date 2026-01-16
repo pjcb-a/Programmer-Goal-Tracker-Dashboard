@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="application.controllers.GoalCardController" styleClass="goal-card" spacing="10"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets top="20" right="10" bottom="20" left="10"/>
+    </padding>
+
+    <HBox spacing="10" alignment="TOP_CENTER">
+
+        <!-- Title and Category -->
+        <VBox HBox.hgrow="ALWAYS" spacing="5">
+            <Label fx:id="titleLabel" styleClass="goal-title"/>
+
+            <!-- Goal -->
+            <Label fx:id="categoryLabel" styleClass="goal-category"/>
+        </VBox>
+        <Button onAction="#handleDeleteGoal" styleClass="delete-button" text="🗑"/>
+    </HBox>
+
+    <!-- Description -->
+    <Label fx:id="descriptionLabel" styleClass="goal-description"/>
+
+    <!-- Progress Section -->
+    <VBox spacing="5">
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label fx:id="unitProgressLabel" styleClass="unit-progress-text"/>
+            <Label fx:id="percentageLabel" styleClass="percentage-text"/>
+        </HBox>
+
+        <!-- Progress Bar -->
+        <ProgressBar fx:id="progressBar" prefWidth="250" styleClass="goal-progress-bar"/>
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button onAction="#handleDecreaseProgress" text="– Decrease" styleClass="action-button-decrease"/>
+        <Button onAction="#handleIncreaseProgress" text="+ Increase" styleClass="action-button-increase"/>
+    </HBox>
+</VBox>

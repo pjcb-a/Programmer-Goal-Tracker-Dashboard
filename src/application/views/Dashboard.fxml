@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="application.controllers.DashboardController"
+        stylesheets="@styles.css"
+        prefHeight="600" prefWidth="1100">
+
+    <BorderPane>
+        <!-- HEADER SECTION -->
+<top>
+            <HBox spacing="10" styleClass="header" alignment="CENTER_LEFT" >
+                <ImageView fitWidth="40" fitHeight="40">
+                    <Image url="/assets/logo.png"/>
+                </ImageView>
+                <VBox spacing="2" alignment="CENTER_LEFT">
+                    <Label text="Programming Goal Tracker" styleClass="header-title"/>
+                    <Label text="Track your coding journey and progress further." styleClass="header-title-desc"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+   Add New Goal"
+                        styleClass="header-button"
+                        onAction="#openAddGoalModal"/>
+            </HBox>
+        </top>
+
+        <!-- MAIN SECTION STAT CARDS & GOAL LISTS -->
+        <center>
+            <ScrollPane fitToWidth="true" styleClass="scroll-pane" hbarPolicy="NEVER">
+                <VBox styleClass="center-content-area" alignment="TOP_CENTER" spacing="30" >
+
+                    <!--  Stat Cards Container -->
+                    <HBox fx:id="cardRowContainer" spacing="20" VBox.vgrow="ALWAYS" alignment="CENTER"/>
+
+                    <!-- Title lang this -->
+                    <Label text="Your Active Goals" styleClass="goals-list-title"/>
+
+                    <!--  Detailed Goal List Container  -->
+                    <FlowPane fx:id="goalListContainer"
+                              styleClass="goal-list-container"
+                              hgap="10" vgap="10"
+                              VBox.vgrow="ALWAYS"
+                              alignment="CENTER"
+                    />
+
+                </VBox>
+            </ScrollPane>
+        </center>
+    </BorderPane>
+</StackPane>

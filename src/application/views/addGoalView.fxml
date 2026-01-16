@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="https://javafx.com/fxml/1"
+           fx:controller="application.controllers.AddGoalController"
+           stylesheets="/application/views/styles.css"
+           prefWidth="500" prefHeight="650">
+
+    <BorderPane styleClass="card-container">
+        <top>
+            <VBox spacing="10" styleClass="card-header-container">
+                <padding>
+                    <Insets top="20" right="20" left="20"/>
+                </padding>
+                <HBox alignment="TOP_CENTER">
+                    <VBox HBox.hgrow="ALWAYS" spacing="2">
+                        <Label text="Add New Programming Goal" styleClass="card-title"/>
+                        <Label text="Create a new goal to track your programming progress" styleClass="card-title-subtitle"/>
+                    </VBox>
+                </HBox>
+                <Separator/>
+            </VBox>
+        </top>
+        <center>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                <VBox spacing="15" styleClass="card-form-content">
+                    <padding>
+                        <Insets right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <!-- Goal Title Input -->
+                    <Label text="Goal Title" styleClass="input-label"/>
+                    <TextField fx:id="titleField" promptText="Enter Goal" styleClass="input-field"/>
+
+                    <!-- Description Input -->
+                    <Label text="Description" styleClass="input-label"/>
+                    <TextArea fx:id="descriptionArea" promptText="Describe your goal..." prefRowCount="3" styleClass="input-field-area"/>
+
+                    <!-- Category Dropdown -->
+                    <Label text="Category" styleClass="input-label"/>
+                    <ComboBox fx:id="categoryComboBox" promptText="Select Category" styleClass="input-field" maxWidth="Infinity"/>
+
+                    <!-- Target Units Input -->
+                    <Label text="Target (units)" styleClass="input-label"/>
+                    <TextField fx:id="unitsField" promptText="10" styleClass="input-field"/>
+                    <Label text="Number of units to complete (lessons, chapters, days, etc.)" styleClass="input-hint"/>
+                </VBox>
+            </ScrollPane>
+        </center>
+
+        <bottom>
+            <HBox alignment="BOTTOM_RIGHT" styleClass="action-bar">
+                <padding>
+                    <Insets top="15" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <Label fx:id="errorLabel" HBox.hgrow="ALWAYS"/>
+                <Button text="Add Goal" onAction="#handleAddGoal" styleClass="card-add-btn"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+
+</StackPane>
